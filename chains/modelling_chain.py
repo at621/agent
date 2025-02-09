@@ -1,10 +1,10 @@
-from modules.problem_identifier import identify_problem
-from modules.data_ingestion import ingest_data
-from modules.data_preprocessing import preprocess_data
-from modules.model_builder import train_model, evaluate_model
-from modules.compliance_checker.compliance_chain import run_compliance_chain
-from modules.benchmarking import benchmark_model
-from modules.documentation import generate_documentation
+from agent.problem_identifier import identify_problem
+from agent.data_ingestion import ingest_data
+from agent.data_preprocessing import preprocess_data
+from agent.model_builder import train_model, evaluate_model
+from agent.compliance_checker.compliance_chain import run_compliance_chain
+from agent.benchmarking import benchmark_model
+from agent.documentation import generate_documentation
 
 def run_credit_risk_chain(user_request: str, status_callback=None):
     """

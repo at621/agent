@@ -1,16 +1,16 @@
 # Credit Risk AI Agent
 
-A **proof-of-concept** AI-driven credit risk solution built with [LangChain](https://github.com/hwchase17/langchain), Python, and data science libraries. 
+A **proof-of-concept** AI-driven credit risk solution built with LangChain. 
 
 It demonstrates a typical workflow:
 1. **Problem Identification**: Determines if a user requests a PD or LGD model.  
 2. **Data Ingestion & Preprocessing**: Reads raw data (CSV), cleans/imputes missing values, and encodes categorical variables.  
-3. **Modeling**: Trains a suitable model (e.g., Logistic Regression for PD, XGBoost for LGD) with basic hyperparameter tuning.  
+3. **Modeling**: Trains a suitable model (e.g., Logistic Regression for PD) with basic hyperparameter tuning using an LLM agent.  
 4. **Compliance Check**: Uses an LLM-based chain to query regulation docs and identify potential issues.  
 5. **Benchmarking**: Compares new model’s performance against a baseline (e.g., AUC = 0.70).  
 6. **Documentation**: Generates a summary of the entire process (performance, compliance status, etc.).  
 
-> **Note**: This is a toy example, **not** production-grade. It's meant to illustrate how you might structure a modular credit risk pipeline with LangChain.
+> **Note**: This is a simplified example, meant to illustrate how you might structure a modular credit risk pipeline with LangChain.
 
 ---
 
@@ -18,7 +18,7 @@ It demonstrates a typical workflow:
 
 ```
 credit_risk_ai_agent/
-├─ main.py                    # Entry point (CLI usage)
+├─ app.py                    # Entry point (via Streamlit)
 ├─ config.py                  # Configuration & paths
 ├─ data/
 │  └─ example_data.csv        # Sample dataset
@@ -54,11 +54,11 @@ credit_risk_ai_agent/
 2. **Run the Agent**:
 
    ```bash
-   python main.py --request "Build a PD model to estimate default probability for auto loans"
+   streamlit run app.py
    ```
    
    - This runs through problem identification, data ingestion/preprocessing, model building, compliance checking, benchmarking, and documentation.  
-   - See console output for final results and check `./docs` for the generated documentation file.
+   - See Streamlit output for final results and check `./docs` for the generated documentation file.
 
 ---
 
